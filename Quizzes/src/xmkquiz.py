@@ -37,20 +37,24 @@ class Question(object):
             spacer = '. \n'
             text = '    ' + chr(ord('a')) + '. '
             # .replace adds indentation
-            text += self.data[key].replace('\n', '\n       ')
+            text += self.data[key].replace('\n', '\n      ')
             # .rstrip strips extra terminal whitespace
             text = text.rstrip() + '\n\n'
             for i, fu in enumerate(self.followups):
                 text += '    ' + chr(ord('a')+ i+1) + '. '
-                text += fu.data[key].replace('\n', '\n       ')
-                text = text.rstrip() + '\n\n'
+                text += fu.data[key].replace('\n', '\n      ')
+                text = text.rstrip() + '\n'
+            text = text.replace('\n      ```', '\n```')
         else:
             if qnum < 10:
                 text = self.data[key].replace('\n', '\n   ').rstrip() + '\n'
+                text = text.replace('\n   ```', '\n```')
             elif qnum < 100:
                 text = self.data[key].replace('\n', '\n    ').rstrip() + '\n'
+                text = text.replace('\n    ```', '\n```')
             else:
                 text = self.data[key].replace('\n', '\n     ').rstrip() + '\n'
+                text = text.replace('\n     ```', '\n```')
 
         print(qnum, spacer, text, sep='', file=outstream)
 

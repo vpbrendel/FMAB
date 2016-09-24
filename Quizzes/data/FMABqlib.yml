@@ -5,7 +5,7 @@
   difficulty: easy
   prompt: |
       Explain what the following bash command does:
-      ```
+      ```{.bash}
       mkdir -p foo/goo
       ```
   answer: |
@@ -23,7 +23,7 @@
   prompt: |
       Assume you wanted to run the previous command also with argument hoo
       instead of goo, i.e.
-      ```
+      ```{.bash}
       mkdir -p foo/goo
       mkdir -p foo/hoo
       ```
@@ -31,7 +31,7 @@
       only six additional characters?
   answer: |
       Use bash brace expansion:
-      ```
+      ```{.bash}
       mkdir -p foo/{goo,hoo}
       ```
 - id: 17041667
@@ -41,57 +41,7 @@
   difficulty: easy
   prompt: |
       Explain what the following bash command does:
-      ```
-      n=`cat foo | wc -l`
-      ```
-  answer: |
-      The command counts the number of lines in the file foo and assigns the
-      value to a variable named n.
-- id: 16508837.1
-  subject: Linux
-  subsubject: bash
-  type: explain
-  difficulty: easy
-  prompt: |
-      Explain what the following bash command does:
-      ```
-      mkdir -p foo/goo
-      ```
-  answer: |
-      If the foo directory does not exist, the command will create foo as well
-      as a subdirectory called goo.
-      If the foo directory exists but the goo subdirectory does not exist, the
-      command will create the goo subdirectory.
-      If both foo and its subdirectory goo already exist, the command will do
-      nothing.
-- id: 16508837.2
-  subject: Linux
-  subsubject: bash
-  type: continuing
-  difficulty: easy
-  prompt: |
-      Assume you wanted to run the previous command also with argument hoo
-      instead of goo, i.e.
-      ```
-      mkdir -p foo/goo
-      mkdir -p foo/hoo
-      ```
-      How could you modify 'mkdir -p foo/goo' to achieve the same result, using
-      only six additional characters?
-
-  answer: |
-      Use bash brace expansion:
-      ```
-      mkdir -p foo/{goo,hoo}
-      ```
-- id: 17041667
-  subject: Linux
-  subsubject: bash
-  type: explain
-  difficulty: easy
-  prompt: |
-      Explain what the following bash command does:
-      ```
+      ```{.bash}
       n=`cat foo | wc -l`
       ```
   answer: |
@@ -204,7 +154,7 @@
   difficulty: easy
   prompt: |
       Explain what the following command does:
-      ```bash
+      ```{.bash}
       ls *.pl | wc -l
       ```
   answer: |

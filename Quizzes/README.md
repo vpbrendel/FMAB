@@ -51,3 +51,8 @@ with sample output
    invoke the command `cd ../alignment/smith-waterman/`, what is your current
    directory now? Please provide the full absolute path.
 ```
+
+Notes:
+python src/xmkquiz.py --lib data/FMABqlib.yml > myquiz.md
+pandoc -f markdown -t latex -o myquiz.pdf  myquiz.md
+evince myquiz.pdf
